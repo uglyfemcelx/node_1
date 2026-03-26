@@ -334,7 +334,12 @@ music.volume = currentVolume
 
 }
 
+document.body.onclick = function(){
+startMusic()
 
+// your existing code...
+  
+}
 
   
 </script>
