@@ -60,10 +60,17 @@ margin-top:30px;
 font-size:13px;
 opacity:0.7;
 }
+
 </style>
+
+
 
 </head>
 <body>
+
+<audio id="bgm" loop>
+  <source src="https://files.catbox.moe/3m9b3p.mp3" type="audio/mpeg">
+</audio>
 
 <pre id="terminal"></pre><span class="cursor"></span>
 
@@ -170,7 +177,7 @@ document.getElementById("log").innerHTML =
 "[log] observer_id: ???<br>" +
 "[log] status: unknown"
 
-// 🔥 strong flicker
+// strong flicker
 let term = document.getElementById("terminal")
 setTimeout(()=>{
 term.style.opacity="0.1"
@@ -185,7 +192,7 @@ term.style.opacity="1"
 },80)
 },500)
 
-// 👁️ random glitch messages
+// random glitch messages
 setInterval(()=>{
 let glitchText = document.createElement("div")
 let messages = ["[signal lost]","i'm watching you","i'm closer than you think"]
@@ -198,7 +205,7 @@ document.body.appendChild(glitchText)
 setTimeout(()=>glitchText.remove(),800)
 },5000)
 
-// 💀 screen flash
+// screen flash
 setInterval(()=>{
 let flash = document.createElement("div")
 flash.style.position="fixed"
@@ -213,19 +220,19 @@ document.body.appendChild(flash)
 setTimeout(()=>flash.remove(),100)
 },8000)
 
-// 👁️ final whisper
+// final whisper
 setTimeout(()=>{
 terminal.innerHTML += "\n> ...do you remember opening this before?"
 },4000)
 
-// 👁️ returning visitor
+// returning visitor
 if(localStorage.getItem("visited")){
 terminal.innerHTML += "\n> welcome back"
 }else{
 localStorage.setItem("visited",true)
 }
 
-// 👁️ cursor tracking message
+// cursor tracking message
 document.addEventListener("mousemove", function(e){
 if(Math.random() < 0.01){
 let follow = document.createElement("div")
@@ -242,7 +249,7 @@ setTimeout(()=>follow.remove(),500)
 }
 
 
-// 👁️ CLICKABLE IMAGE FUNCTION
+// CLICKABLE IMAGE FUNCTION
 function changeImage(){
 
 let img = document.getElementById("image")
@@ -287,7 +294,51 @@ terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
 
 typeLine()
 
+// MUSIC SYSTEM
+let music = document.getElementById("bgm")
+let currentVolume = 0.05
+let musicStarted = false
+
+function startMusic(){
+
+if(musicStarted) return
+musicStarted = true
+
+music.volume = currentVolume
+music.play()
+
+// slowly increase volume
+setInterval(()=>{
+if(currentVolume < 0.35){
+currentVolume += 0.01
+music.volume = currentVolume
+}
+},2000)
+
+// random distortion
+setInterval(()=>{
+if(Math.random() < 0.4){
+
+let speed = 0.7 + Math.random()*0.8
+music.playbackRate = speed
+
+music.volume = Math.random()*0.4
+
+setTimeout(()=>{
+music.playbackRate = 1
+music.volume = currentVolume
+},200)
+
+}
+},3000)
+
+}
+
+
+
+  
 </script>
+
 
 </body>
 </html>
