@@ -259,9 +259,7 @@ img.src = "https://images.steamusercontent.com/ugc/433780719169727960/771F6682B0
 
 secret.style.opacity = "1"
 secret.innerText =
-"> image corrupted\n" +
-"> switching layer\n" +
-"> why..."
+"> why did you click it?"
 
 // glitch flash
 document.body.style.background = "#001a00"
