@@ -71,7 +71,7 @@ opacity:0.7;
 
 <div id="hiddenMessage"></div>
 
-<img id="image" src="https://i.imgur.com/8Km9tLL.png">
+<img id="image" src="https://art.ngfiles.com/images/2091000/2091580_shantalexshantaesbae_love-lain.gif?f1632361557">
 
 <div id="log"></div>
 
