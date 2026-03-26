@@ -254,10 +254,7 @@ secret.style.opacity = "1"
 secret.innerText =
 "> image corrupted\n" +
 "> switching layer…\n" +
-"> signal rewritten\n\n" +
-"> this is not the same image\n" +
-"> this is not the same place\n\n" +
-"> you went too deep"
+"> why..."
 
 // glitch flash
 document.body.style.background = "#001a00"
