@@ -200,6 +200,49 @@ document.getElementById("log").innerHTML =
 "[log] observer_id: ???<br>" +
 "[log] status: unknown"
 
+
+let term = document.getElementById("terminal")
+setTimeout(()=>{
+term.style.opacity="0.1"
+setTimeout(()=>{
+term.style.opacity="1"
+setTimeout(()=>{
+term.style.opacity="0.3"
+setTimeout(()=>{
+term.style.opacity="1"
+},80)
+},80)
+},80)
+},500)
+
+setInterval(()=>{
+let glitchText = document.createElement("div")
+let messages = ["[signal lost]","i'm watching you","i'm closer than you think"]
+glitchText.innerText = messages[Math.floor(Math.random()*messages.length)]
+glitchText.style.position = "absolute"
+glitchText.style.left = Math.random()*window.innerWidth + "px"
+glitchText.style.top = Math.random()*window.innerHeight + "px"
+glitchText.style.opacity = "0.7"
+document.body.appendChild(glitchText)
+setTimeout(()=>glitchText.remove(),800)
+},5000)
+
+setInterval(()=>{
+let flash = document.createElement("div")
+flash.style.position="fixed"
+flash.style.top="0"
+flash.style.left="0"
+flash.style.width="100%"
+flash.style.height="100%"
+flash.style.background="#00ff88"
+flash.style.opacity="0.05"
+flash.style.pointerEvents="none"
+document.body.appendChild(flash)
+setTimeout(()=>flash.remove(),100)
+},8000)
+  
+
+  
 setTimeout(()=>{
 terminal.innerHTML += "\n> ...do you remember opening this before?"
 },4000)
@@ -216,6 +259,26 @@ document.getElementById("signalLink").style.opacity = "1"
 
 }
 
+
+
+  document.addEventListener("mousemove", function(e){
+if(Math.random() < 0.01){
+let follow = document.createElement("div")
+follow.innerText = "i see you"
+follow.style.position="absolute"
+follow.style.left = e.pageX + "px"
+follow.style.top = e.pageY + "px"
+follow.style.opacity="0.5"
+document.body.appendChild(follow)
+setTimeout(()=>follow.remove(),500)
+}
+})
+
+  }
+  
+
+
+  
 // IMAGE CLICK
 function changeImage(){
 let img = document.getElementById("image")
@@ -280,6 +343,15 @@ msg.innerText =
 
 }
 
+setInterval(()=>{
+let names = ["name: ???","name: uglyfoid","name: ş̷̧̠̼̩͍͚̰̭̬͗̊͊̿͋̌̌̒͝o̴̢̞͍͎̣̻̞͓̓̈͒̏̕k̸̨͖̠̮̳̭̞̅̈́̋̑̂͆̈̚̕͜f̸̣̠͂́i̸̼̱̰͓̻͙̰̻̜̇̐̽͋̈́̈́̚̚ạ̵͈͍͐̔?̸̠̞̣̗̭̺̠̕͜͝ͅ", "name: i'm watching you :)", "name: you are a nobody, just like me", "name: █████"]
+let random = names[Math.floor(Math.random()*names.length)]
+terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
+},3000)
+
+typeLine()
+
+  
 typeLine()
 
 </script>
