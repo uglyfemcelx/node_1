@@ -69,7 +69,7 @@ opacity:0.7;
 <body>
 
 <audio id="bgm" loop>
-  <source src="https://files.catbox.moe/3m9b3p.mp3" type="audio/mpeg">
+  <source src="https://open.spotify.com/track/2urcvyOsIyF7kTerczbeDX?si=cmHgFu1wSjy1dRgHWt5MhQ" type="audio/mpeg">
 </audio>
 
 <pre id="terminal"></pre><span class="cursor"></span>
