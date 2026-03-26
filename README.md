@@ -87,8 +87,8 @@ const baseLines = [
 "height: fluctuating",
 "weight: unknown",
 "",
-"status: alive?",
 "status: alive.",
+"status: alive?",
 "status: █████",
 "",
 "location: the wired",
@@ -167,12 +167,12 @@ document.getElementById("image").style.opacity = "1"
 document.getElementById("log").innerHTML = 
 "[log] access_time: unknown<br>" +
 "[log] observer_id: ???<br>" +
-"[log] status: being watched"
+"[log] status: unknown"
 
 // random signal interference
 setInterval(()=>{
 let glitchText = document.createElement("div")
-glitchText.innerText = "[signal lost]"
+glitchText.innerText = "[signal lost]", "i'm watching you", "i'm closer than you think"
 glitchText.style.position = "absolute"
 glitchText.style.left = Math.random()*window.innerWidth + "px"
 glitchText.style.top = Math.random()*window.innerHeight + "px"
@@ -189,12 +189,17 @@ setTimeout(()=>glitchText.remove(),800)
 document.body.onclick = function(){
 let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
-msg.innerText = "> this file has been opened before"
+msg.innerText = "> this file has been opened before",
+"> you were already here",
+"> every visit has been recorded",
+"> even the ones you don’t remember",
+"> the ẃ̶̰̗̪̝̙́̈́̏̐͘͜i̷̢̱͍̩̘̱̪̩͈̅̌͋ͅr̷̹̮̖̘̲̙̐̄͗̈̕͜ë̵̝͙̱͙͔̈́͘͝ḑ̸̱̯̙̯̙͈̤̬͊͛̿͑̆̄̍ͅ keeps everything",
+"> including you"
 }
 
 // identity glitch (name changing)
 setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: ̸͓̼̰͉̍̌̂̒̔̕ɐ̷͉̟͕͖̤̾̐̂́̑̑̒̕̚ı̷̩̩͖̼͓̫̣̌̆͐̚ͅɟ̸̤́̓͆̍͆̈́͛̀kö̸̝͖̙̪͚̘́͛s?","name: █████"]
+let names = ["name: ???","name: uglyfoid","name: ̸͓̼̰͉̍̌̂̒̔̕ɐ̷͉̟͕͖̤̾̐̂́̑̑̒̕̚ı̷̩̩͖̼͓̫̣̌̆͐̚ͅɟ̸̤́̓͆̍͆̈́͛̀kö̸̝͖̙̪͚̘́͛s?","name: i'm watching you :)", "name: █████"]
 let random = names[Math.floor(Math.random()*names.length)]
 
 terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
