@@ -138,7 +138,7 @@ const baseLines = [
 "> why",
 "> why",
 "> why",
-"̷>̷ ̷w̷h̷y̷"̷,̷
+"̷>̷ ̷w̷h̷y̷"
 ]
 
 let i = 0
