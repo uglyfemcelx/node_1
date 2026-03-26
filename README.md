@@ -253,7 +253,7 @@ img.src = "https://images.steamusercontent.com/ugc/433780719169727960/771F6682B0
 secret.style.opacity = "1"
 secret.innerText =
 "> image corrupted\n" +
-"> switching layer…\n" +
+"> switching layer\n" +
 "> why..."
 
 // glitch flash
@@ -274,13 +274,13 @@ msg.innerText =
 "> you were already here\n" +
 "> every visit has been recorded\n" +
 "> even the ones you don’t remember\n" +
-"> the wired keeps everything\n" +
+"> the w̴͎͖̆̀l̶̞̖̖̣̜̫̩̻̱̉̉̍͋̈́̊͗̕͝͝į̷̟͔̀̉̈͗̾͌́̕͝͝ř̸͓̲̗̳͚̩̘̳̤̟́̍͊͌̇͘̚͝ę̸̡̜̪̤̥̲̐̈́̂̽̑͆͜d̸̬̓̄͒̃ keeps everything\n" +
 "> including you"
 }
 
 // identity glitch
 setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: sofia?","name: █████"]
+let names = ["name: ???","name: uglyfoid","name: s̶̛͉̀̐̈̓͊́̈̊̿͜o̸̳͗͐̚̕kif̵̠̭̬͉̞́̓́͒͆̄̉̍͐̆i̵̡̛̻̮̮̬͇͓̥͈͒̄̏͂̄̀͝à̷̛̺̬͆͊̍̿͑̚̚̚?̷̗͍̮̩̎","name: i'm watching you :)", "name: ERROR", "name: █████"]
 let random = names[Math.floor(Math.random()*names.length)]
 terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
 },3000)
