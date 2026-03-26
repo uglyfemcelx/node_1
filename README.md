@@ -1,3 +1,5 @@
+
+</body>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,6 @@ background:black;
 color:#00ff88;
 font-family:"Courier New", monospace;
 padding:40px;
-overflow-x:hidden;
 }
 
 #terminal{
@@ -31,20 +32,9 @@ animation:blink 1s infinite;
 100%{opacity:1;}
 }
 
-.glitch{
-animation:glitch 0.2s infinite;
-}
-
-@keyframes glitch{
-0%{opacity:1;}
-50%{opacity:0.5;}
-100%{opacity:1;}
-}
-
 #hiddenMessage{
 opacity:0;
 margin-top:20px;
-color:#00ff88;
 transition:opacity 1s;
 }
 
@@ -61,23 +51,19 @@ margin-top:30px;
 font-size:13px;
 opacity:0.7;
 }
-
 </style>
 
 </head>
 <body>
 
 <pre id="terminal"></pre><span class="cursor"></span>
-
 <div id="hiddenMessage"></div>
-
 <img id="image" src="https://i.imgur.com/8Km9tLL.png">
-
 <div id="log"></div>
 
 <script>
 
-const baseLines = [
+const lines = [
 "[ identity_node_01 :: access granted ]",
 "",
 "name: ???",
@@ -130,7 +116,7 @@ const baseLines = [
 "",
 "—",
 "",
-"> why are you reading this?"
+"> why are you reading this?",
 "> why are you here?"
 ]
 
@@ -138,65 +124,34 @@ let i = 0
 const terminal = document.getElementById("terminal")
 
 function typeLine(){
-if(i < baseLines.length){
-terminal.innerHTML += baseLines[i] + "\n"
+if(i < lines.length){
+terminal.innerHTML += lines[i] + "\n"
 i++
-setTimeout(typeLine, 500)
+setTimeout(typeLine, 400)
 }else{
-afterTyping()
+finish()
 }
 }
 
-function afterTyping(){
-
-// glitch effect
-terminal.classList.add("glitch")
-setTimeout(()=>terminal.classList.remove("glitch"),1500)
-
-// show image
+function finish(){
 document.getElementById("image").style.opacity = "1"
 
-// system log
-document.getElementById("log").innerHTML = 
+document.getElementById("log").innerHTML =
 "[log] access_time: unknown<br>" +
 "[log] observer_id: ???<br>" +
 "[log] status: being watched"
-
-// random signal interference
-setInterval(()=>{
-let glitchText = document.createElement("div")
-glitchText.innerText = "[signal lost]"
-glitchText.style.position = "absolute"
-glitchText.style.left = Math.random()*window.innerWidth + "px"
-glitchText.style.top = Math.random()*window.innerHeight + "px"
-glitchText.style.opacity = "0.7"
-document.body.appendChild(glitchText)
-
-setTimeout(()=>glitchText.remove(),800)
-
-},5000)
-
 }
 
-// hidden message on click
-document.body.onclick = function(){
+// click message
+document.body.addEventListener("click", function(){
 let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
 msg.innerText = "> this file has been opened before"
-}
-
-// identity glitch (name changing)
-setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: ̸͓̼̰͉̍̌̂̒̔̕ɐ̷͉̟͕͖̤̾̐̂́̑̑̒̕̚ı̷̩̩͖̼͓̫̣̌̆͐̚ͅɟ̸̤́̓͆̍͆̈́͛̀ö̸̝͖̙̪͚̘́͛s?","name: █████"]
-let random = names[Math.floor(Math.random()*names.length)]
-
-terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
-
-},3000)
+})
 
 typeLine()
 
 </script>
 
 </body>
-</html>
+</html></html>
