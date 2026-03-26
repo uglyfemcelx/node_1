@@ -44,7 +44,6 @@ animation:glitch 0.2s infinite;
 #hiddenMessage{
 opacity:0;
 margin-top:20px;
-color:#00ff88;
 transition:opacity 1s;
 }
 
@@ -61,7 +60,6 @@ margin-top:30px;
 font-size:13px;
 opacity:0.7;
 }
-
 </style>
 
 </head>
@@ -160,50 +158,104 @@ function afterTyping(){
 terminal.classList.add("glitch")
 setTimeout(()=>terminal.classList.remove("glitch"),1500)
 
-// show image
+// image
 document.getElementById("image").style.opacity = "1"
 
-// system log
-document.getElementById("log").innerHTML = 
+// logs
+document.getElementById("log").innerHTML =
 "[log] access_time: unknown<br>" +
 "[log] observer_id: ???<br>" +
 "[log] status: unknown"
 
-// random signal interference
+// 🔥 strong flicker
+let term = document.getElementById("terminal")
+setTimeout(()=>{
+term.style.opacity="0.1"
+setTimeout(()=>{
+term.style.opacity="1"
+setTimeout(()=>{
+term.style.opacity="0.3"
+setTimeout(()=>{
+term.style.opacity="1"
+},80)
+},80)
+},80)
+},500)
+
+// 👁️ random glitch messages
 setInterval(()=>{
 let glitchText = document.createElement("div")
-glitchText.innerText = "[signal lost]", "i'm watching you", "i'm closer than you think"
+let messages = ["[signal lost]","i'm watching you","i'm closer than you think"]
+glitchText.innerText = messages[Math.floor(Math.random()*messages.length)]
 glitchText.style.position = "absolute"
 glitchText.style.left = Math.random()*window.innerWidth + "px"
 glitchText.style.top = Math.random()*window.innerHeight + "px"
 glitchText.style.opacity = "0.7"
 document.body.appendChild(glitchText)
-
 setTimeout(()=>glitchText.remove(),800)
-
 },5000)
+
+// 💀 screen flash
+setInterval(()=>{
+let flash = document.createElement("div")
+flash.style.position="fixed"
+flash.style.top="0"
+flash.style.left="0"
+flash.style.width="100%"
+flash.style.height="100%"
+flash.style.background="#00ff88"
+flash.style.opacity="0.05"
+flash.style.pointerEvents="none"
+document.body.appendChild(flash)
+setTimeout(()=>flash.remove(),100)
+},8000)
+
+// 👁️ final whisper
+setTimeout(()=>{
+terminal.innerHTML += "\n> ...do you remember opening this before?"
+},4000)
+
+// 👁️ returning visitor
+if(localStorage.getItem("visited")){
+terminal.innerHTML += "\n> welcome back"
+}else{
+localStorage.setItem("visited",true)
+}
+
+// 👁️ cursor tracking message
+document.addEventListener("mousemove", function(e){
+if(Math.random() < 0.01){
+let follow = document.createElement("div")
+follow.innerText = "i see you"
+follow.style.position="absolute"
+follow.style.left = e.pageX + "px"
+follow.style.top = e.pageY + "px"
+follow.style.opacity="0.5"
+document.body.appendChild(follow)
+setTimeout(()=>follow.remove(),500)
+}
+})
 
 }
 
-// hidden message on click
+// hidden message
 document.body.onclick = function(){
 let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
-msg.innerText = "> this file has been opened before",
-"> you were already here",
-"> every visit has been recorded",
-"> even the ones you don’t remember",
-"> the ẃ̶̰̗̪̝̙́̈́̏̐͘͜i̷̢̱͍̩̘̱̪̩͈̅̌͋ͅr̷̹̮̖̘̲̙̐̄͗̈̕͜ë̵̝͙̱͙͔̈́͘͝ḑ̸̱̯̙̯̙͈̤̬͊͛̿͑̆̄̍ͅ keeps everything",
+msg.innerText =
+"> this file has been opened before\n" +
+"> you were already here\n" +
+"> every visit has been recorded\n" +
+"> even the ones you don’t remember\n" +
+"> the wired keeps everything\n" +
 "> including you"
 }
 
-// identity glitch (name changing)
+// identity glitch
 setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: ̸͓̼̰͉̍̌̂̒̔̕ɐ̷͉̟͕͖̤̾̐̂́̑̑̒̕̚ı̷̩̩͖̼͓̫̣̌̆͐̚ͅɟ̸̤́̓͆̍͆̈́͛̀kö̸̝͖̙̪͚̘́͛s?","name: i'm watching you :)", "name: █████"]
+let names = ["name: ???","name: uglyfoid","name: sofia?","name: █████"]
 let random = names[Math.floor(Math.random()*names.length)]
-
 terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
-
 },3000)
 
 typeLine()
