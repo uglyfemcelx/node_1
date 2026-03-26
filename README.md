@@ -69,7 +69,10 @@ opacity:0.7;
 
 <div id="hiddenMessage"></div>
 
-<img id="image" src="https://art.ngfiles.com/images/2091000/2091580_shantalexshantaesbae_love-lain.gif?f1632361557">
+<img id="image" src="https://art.ngfiles.com/images/2091000/2091580_shantalexshantaesbae_love-lain.gif?f1632361557" 
+onclick="changeImage()">
+
+<div id="imageSecret"></div>
 
 <div id="log"></div>
 
@@ -237,6 +240,33 @@ setTimeout(()=>follow.remove(),500)
 })
 
 }
+
+
+// 👁️ CLICKABLE IMAGE FUNCTION
+function changeImage(){
+
+let img = document.getElementById("image")
+let secret = document.getElementById("imageSecret")
+
+img.src = "https://images.steamusercontent.com/ugc/433780719169727960/771F6682B048A2947827EC9EF8D1ECB3A71FDDE5/?imw=1024&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+
+secret.style.opacity = "1"
+secret.innerText =
+"> image corrupted\n" +
+"> switching layer…\n" +
+"> signal rewritten\n\n" +
+"> this is not the same image\n" +
+"> this is not the same place\n\n" +
+"> you went too deep"
+
+// glitch flash
+document.body.style.background = "#001a00"
+setTimeout(()=>{
+document.body.style.background = "black"
+},120)
+
+}
+
 
 // hidden message
 document.body.onclick = function(){
