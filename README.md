@@ -61,12 +61,38 @@ font-size:13px;
 opacity:0.7;
 }
 
+  
+#signalLink{
+margin-top:30px;
+text-align:center;
+opacity:0;
+transition:opacity 2s;
+}
+
+#signalLink a{
+color:#00ff88;
+text-decoration:none;
+}
+
+#signalLink a:hover{
+opacity:0.5;
+}
+
+
+
+  
+  
 </style>
+
+
 
 
 
 </head>
 <body>
+
+
+
 
 <audio id="bgm" loop>
   <source src="https://open.spotify.com/track/2urcvyOsIyF7kTerczbeDX?si=cmHgFu1wSjy1dRgHWt5MhQ" type="audio/mpeg">
@@ -76,7 +102,7 @@ opacity:0.7;
 
 <div id="hiddenMessage"></div>
 
-<img id="image" src="https://art.ngfiles.com/images/2091000/2091580_shantalexshantaesbae_love-lain.gif?f1632361557" 
+<img id="image" src="https://art.ngfileom/images/2091000/2091580_shantalexshantaesbae_love-lain.gif?f1632361557" 
 onclick="changeImage()">
 
 <div id="imageSecret"></div>
@@ -335,9 +361,20 @@ music.volume = currentVolume
 document.body.onclick = function(){
 startMusic()
 
-// your existing code...
   
 }
+
+<div id="signalLink">
+<a href="https://tellonym.me/uglyfemcelx" target="_blank">
+> transmit a signal into the wired
+</a>
+</div>
+
+  setTimeout(()=>{
+document.getElementById("signalLink").style.opacity = "1"
+},3000)
+  
+
 
   
 </script>
