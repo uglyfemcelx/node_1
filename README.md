@@ -285,18 +285,13 @@ startMusic()
 let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
 msg.innerText =
-"> this file has been opened before\n" +
-"> you were already here\n" +
-"> every visit has been recorded\n" +
-"> even the ones you don’t remember\n" +
-"> the wired keeps everything\n" +
-"> including you"
-
+"> this node has been opened before"
+  
 }
 
 // NAME GLITCH
 setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: sofia?","name: i'm watching you :)","name: █████"]
+let names = ["name: ???","name: uglyfoid","name: ş̷̧̠̼̩͍͚̰̭̬͗̊͊̿͋̌̌̒͝o̴̢̞͍͎̣̻̞͓̓̈͒̏̕k̸̨͖̠̮̳̭̞̅̈́̋̑̂͆̈̚̕͜f̸̣̠͂́i̸̼̱̰͓̻͙̰̻̜̇̐̽͋̈́̈́̚̚ạ̵͈͍͐̔?","name: i'm watching you :)","name: █████"]
 let random = names[Math.floor(Math.random()*names.length)]
 terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
 },3000)
