@@ -89,10 +89,6 @@ opacity:0.5;
 
 <body>
 
-<audio id="bgm" loop>
-<source src="" type="audio/mpeg">
-</audio>
-
 <pre id="terminal"></pre><span class="cursor"></span>
 
 <div id="hiddenMessage"></div>
@@ -267,39 +263,6 @@ setTimeout(()=>{document.body.style.background="black"},120)
         }, 1000);
     }
   }
-
-// MUSIC
-let music = document.getElementById("bgm")
-let currentVolume = 0.05
-let musicStarted = false
-
-function startMusic(){
-if(musicStarted) return
-musicStarted = true
-
-music.volume = currentVolume
-music.play()
-
-setInterval(()=>{
-if(currentVolume < 0.35){
-currentVolume += 0.01
-music.volume = currentVolume
-}
-},2000)
-
-setInterval(()=>{
-if(Math.random() < 0.4){
-let speed = 0.7 + Math.random()*0.8
-music.playbackRate = speed
-music.volume = Math.random()*0.4
-
-setTimeout(()=>{
-music.playbackRate = 1
-music.volume = currentVolume
-},200)
-}
-},3000)
-}
 
 // CLICK
 document.body.onclick = function(){
