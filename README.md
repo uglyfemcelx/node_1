@@ -132,8 +132,8 @@ const baseLines = [
 "—",
 "",
 "> i exist between signals",
-"> i don’t remember when it started",
-"> i don’t remember if it started",
+"> i dont remember when it started",
+"> i dont remember if it started",
 "",
 "> or if this is really me",
 "",
@@ -166,6 +166,22 @@ const baseLines = [
 "",
 "> why are you reading this?",
 "> why are you here",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
+"> why",
 "> why",
 "> why",
 "> why",
@@ -291,7 +307,7 @@ msg.innerText =
 
 // NAME GLITCH
 setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: ş̷̧̠̼̩͍͚̰̭̬͗̊͊̿͋̌̌̒͝o̴̢̞͍͎̣̻̞͓̓̈͒̏̕k̸̨͖̠̮̳̭̞̅̈́̋̑̂͆̈̚̕͜f̸̣̠͂́i̸̼̱̰͓̻͙̰̻̜̇̐̽͋̈́̈́̚̚ạ̵͈͍͐̔?","name: i'm watching you :)","name: █████"]
+let names = ["name: ???","name: uglyfoid","name: ş̷̧̠̼̩͍͚̰̭̬͗̊͊̿͋̌̌̒͝o̴̢̞͍͎̣̻̞͓̓̈͒̏̕k̸̨͖̠̮̳̭̞̅̈́̋̑̂͆̈̚̕͜f̸̣̠͂́i̸̼̱̰͓̻͙̰̻̜̇̐̽͋̈́̈́̚̚ạ̵͈͍͐̔?", "name: forgottenfoid", "name: digitaldecay","name: uglyfemcelx", "name: tanpa_nama.exe", "name: i'm watching you :)","name: █████"]
 let random = names[Math.floor(Math.random()*names.length)]
 terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
 },3000)
