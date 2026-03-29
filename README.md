@@ -90,7 +90,7 @@ opacity:0.5;
 <body>
 
 <audio id="bgm" loop>
-<source src="https://raw.githubusercontent.com/uglyfemcelx/node_1/fish.mp3" type="audio/mpeg">
+<source src="" type="audio/mpeg">
 </audio>
 
 <pre id="terminal"></pre><span class="cursor"></span>
