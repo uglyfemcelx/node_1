@@ -232,7 +232,7 @@ document.getElementById("signalLink").style.opacity = "1"
 
 }
 
-// CURSOR FOLLOW (FIXED)
+// CURSOR FOLLOW
 document.addEventListener("mousemove", function(e){
 if(Math.random() < 0.01){
 let follow = document.createElement("div")
