@@ -244,30 +244,28 @@ setTimeout(()=>follow.remove(),500)
 
 // IMAGE CLICK
 function changeImage(){
-let img = document.getElementById("image")
-let secret = document.getElementById("imageSecret")
+    imageClicks++;
 
-img.src ="https://images.steamusercontent.com/ugc/433780719169727960/771F6682B048A2947827EC9EF8D1ECB3A71FDDE5/?imw=1024&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+    let img = document.getElementById("image")
+    let secret = document.getElementById("imageSecret")
 
-secret.style.opacity = "1"
-secret.innerText = "> why did you click it?"
+    img.src="https://images.steamusercontent.com/ugc/433780719169727960/771F6682B048A2947827EC9EF8D1ECB3A71FDDE5/?imw=1024&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
 
-document.body.style.background = "#001a00"
-setTimeout(()=>{document.body.style.background="black"},120)
-}
+    secret.style.opacity = "1"
+    secret.innerText = "> why did you click it?"
 
-// after 3 clicks > redirect
+    document.body.style.background = "#001a00"
+    setTimeout(()=>{document.body.style.background="black"},120)
+
     if(imageClicks >= 3){
         setTimeout(()=>{
             window.location.href = "https://x.com/monlogis";
         }, 1000);
     }
-  }
+}
 
 // CLICK
-document.body.onclick = function(){
-
-startMusic()
+document.body.onclick = function
 
 let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
