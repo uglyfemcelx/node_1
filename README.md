@@ -106,6 +106,11 @@ opacity:0.5;
 </div>
 
 <script>
+let imageClicks = 0;
+
+function startMusic(){
+    // safe placeholder so it wont break
+}
 
 const baseLines = [
 "[ identity_node_01 :: access granted ]",
@@ -265,14 +270,14 @@ function changeImage(){
 }
 
 // CLICK
-document.body.onclick = function
+document.body.onclick = function(){
+
+startMusic()
 
 let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
 msg.innerText =
 "> this node has been opened before"
-  
-}
 
 // NAME GLITCH
 setInterval(()=>{
