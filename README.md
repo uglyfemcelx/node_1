@@ -106,10 +106,11 @@ opacity:0.5;
 </div>
 
 <script>
+
 let imageClicks = 0;
 
 function startMusic(){
-    // safe placeholder so it wont break
+    // safe placeholder so it won break
 }
 
 const baseLines = [
@@ -185,11 +186,7 @@ const baseLines = [
 "> why",
 "> why",
 "> why",
-"> why",
-"> why",
-"> why",
-"> why",
-"̷> why"
+"> why"
 ]
 
 let i = 0
@@ -233,7 +230,7 @@ document.getElementById("signalLink").style.opacity = "1"
 
 }
 
-// CURSOR FOLLOW
+// cursor follow
 document.addEventListener("mousemove", function(e){
 if(Math.random() < 0.01){
 let follow = document.createElement("div")
@@ -247,29 +244,31 @@ setTimeout(()=>follow.remove(),500)
 }
 })
 
-// IMAGE CLICK
+// image click
 function changeImage(){
-    imageClicks++;
 
-    let img = document.getElementById("image")
-    let secret = document.getElementById("imageSecret")
+imageClicks++;
 
-    img.src="https://images.steamusercontent.com/ugc/433780719169727960/771F6682B048A2947827EC9EF8D1ECB3A71FDDE5/?imw=1024&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+let img = document.getElementById("image")
+let secret = document.getElementById("imageSecret")
 
-    secret.style.opacity = "1"
-    secret.innerText = "> why did you click it?"
+img.src ="https://images.steamusercontent.com/ugc/433780719169727960/771F6682B048A2947827EC9EF8D1ECB3A71FDDE5/?imw=1024&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
 
-    document.body.style.background = "#001a00"
-    setTimeout(()=>{document.body.style.background="black"},120)
+secret.style.opacity = "1"
+secret.innerText = "> why did you click it?"
 
-    if(imageClicks >= 3){
-        setTimeout(()=>{
-            window.location.href = "https://x.com/monlogis";
-        }, 1000);
-    }
+document.body.style.background = "#001a00"
+setTimeout(()=>{document.body.style.background="black"},120)
+
+if(imageClicks >= 3){
+setTimeout(()=>{
+window.location.href = "https://x.com/monlogis";
+}, 1000);
 }
 
-// CLICK
+}
+
+// clickscreen once
 document.body.onclick = function(){
 
 startMusic()
@@ -278,10 +277,12 @@ let msg = document.getElementById("hiddenMessage")
 msg.style.opacity = "1"
 msg.innerText =
 "> this node has been opened before"
+  
+}
 
-// NAME GLITCH
+// name glitch
 setInterval(()=>{
-let names = ["name: ???","name: uglyfoid","name: ş̷̧̠̼̩͍͚̰̭̬͗̊͊̿͋̌̌̒͝o̴̢̞͍͎̣̻̞͓̓̈͒̏̕k̸̨͖̠̮̳̭̞̅̈́̋̑̂͆̈̚̕͜f̸̣̠͂́i̸̼̱̰͓̻͙̰̻̜̇̐̽͋̈́̈́̚̚ạ̵͈͍͐̔?", "name: forgottenfoid", "name: digitaldecay","name: uglyfemcelx", "name: tanpa_nama.exe", "name: i'm watching you :)","name: █████"]
+let names = ["name: ???","name: uglyfoid","name: ş̷̧̠̼̩͍͚̰̭̬͗̊͊̿͋̌̌̒͝o̴̢̞͍͎̣̻̞͓̓̈͒̏̕k̸̨͖̠̮̳̭̞̅̈́̋̑̂͆̈̚̕͜f̸̣̠͂́i̸̼̱̰͓̻͙̰̻̜̇̐̽͋̈́̈́̚̚ạ̵͈͍͐̔: forgottenfoid","name: tanpa_nama.exe", "name: monlogis", "name: digitaldecay","name: uglyfemcelx","name: i'm watching you :)","name: █████"]
 let random = names[Math.floor(Math.random()*names.length)]
 terminal.innerHTML = terminal.innerHTML.replace(/name: .*/, random)
 },3000)
