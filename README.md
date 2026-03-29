@@ -260,6 +260,14 @@ document.body.style.background = "#001a00"
 setTimeout(()=>{document.body.style.background="black"},120)
 }
 
+// after 3 clicks > redirect
+    if(imageClicks >= 3){
+        setTimeout(()=>{
+            window.location.href = "https://x.com/monlogis";
+        }, 1000);
+    }
+  }
+
 // MUSIC
 let music = document.getElementById("bgm")
 let currentVolume = 0.05
