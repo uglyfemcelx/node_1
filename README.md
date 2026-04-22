@@ -262,7 +262,7 @@ setTimeout(()=>{document.body.style.background="black"},120)
 
 if(imageClicks >= 3){
 setTimeout(()=>{
-window.location.href = "https://x.com/monlogis";
+window.location.href = "https://x.com/forgottenfoid";
 }, 1000);
 }
 
